@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #1f1b11;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#stage {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    align-items: start;
+    justify-items: start;
+    overflow: hidden;
+    padding-top: 2%;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+#pagina-inicial {
+    display: grid;
+    grid-template-rows: 200px 230px 280px 140px;
+    grid-template-columns: 1fr 1fr;
+    width: 750px;
+    height: 850px;
+    background-color: #9f854b;
+    position: relative;
+    transform-origin: top left;
+}
+
+header {
+    grid-area: 1 / 1 / span 1 / span 2;
+    font-family: 'Amarante', Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    color: #000000;
+    text-align: center;
+    padding: 6% 8%;
+}
+
+h3 {
+    grid-area: 2 / 1 / span 1 / span 2;
+    font-family: "Palatino Linotype", serif;
+    font-size: 20px;
+    color: #000000;
+    text-align: center;
+    margin: 0 17%;
+    font-style: italic;
+}
+
+p {
+    grid-area: 3 / 1 / span 1 / span 2;
+    font-family: "Palatino Linotype", serif;
+    font-size: 20px;
+    color: #000000;
+    font-style: italic;
+    text-align: center;
+    padding: 5% 6%;
+}
+
+#selecionar-opcoes {
+    grid-area: 4 / 1 / span 1 / span 1;
+    background: rgb(182, 114, 13);
+    width: 70%;
+    max-width: 200px;
+    font-size: clamp(20px, 25px, 37px);
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    margin: auto;
+    padding: 2%;
+    cursor: pointer;
+}
+
+.lista-de-opcoes {
+    display: none;
+    grid-area: 4 / 1 / span 1 / span 1;
+    background-color: #9f854b;
+    width: 200px;
+    height: 210px;
+    overflow-y: auto;
+    border: solid 4px black;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    padding: 3px;
+}
+
+.livro-escolhido-da-lista-de-opcoes {
+    height: 33%;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: unset;
+    align-items: center;
+}
+
+.opcoes {
+    width: 100%;
+    font-size: 18px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d0a925;
+    border: solid 3px black;
+    border-radius: 4px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, background-color 0.2s;
+    font-family: 'impact', cursive;
+    color: #000000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.opcoes:hover {
+    background-color: #f2d16b;
+    transform: scale(1.05);
+}
+
+#start {
+    grid-area: 4 / 2 / span 1 / span 1;
+    background: rgb(182, 114, 13);
+    width: 70%;
+    max-width: 200px;
+    font-size: clamp(20px, 25px, 37px);
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    align-self: center;
+    justify-self: center;
+    margin: 0;
+    padding: 2%;
+    cursor: pointer;
+}
+
+.container {
+    display: none;
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 300px 130px 290px 130px;
+    width: 750px;
+    height: 850px;
+    margin: 0;
+    background-color: #9f854b;
+    transform-origin: top left;
+}
+
+.estante {
+    grid-area: 1 / 1 / span 3 / span 2;
+    display: grid;
+    grid-template-rows: 206px 102px 100px 102px 100px;
+    background: url("../imagens/estantent.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#evangelhos {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 11.5%;
+    width: 76%;
+}
+
+#historicos {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 11.5%;
+    width: 76%;
+}
+
+#cartas-de-paulo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 11.5%;
+    width: 76%;
+}
+
+#cartas-gerais {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 11.5%;
+    width: 76%;
+}
+
+#profetico {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 11.5%;
+    width: 76%;
+}
+
+.box {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.5%;
+    width: 33px;
+    height: 63px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    border: solid 1px #000000;
+    box-shadow: 3px 2px rgb(37, 22, 5);
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #534a35;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.box:hover,
+.box.droppable-hover {
+    /* Efeito visual ao passar o mouse OU ao arrastar elemento sobre a box */
+    border-width: 2px;
+    transform: scale(1.2);
+}
+
+#obs {
+    display: grid;
+    grid-template-rows: 3fr repeat(5, 1fr);
+    grid-area: 1 / 3 / span 1 / span 1;
+    padding: 0 7%;
+}
+
+#p1 {
+    grid-area: 1 / 1 / span 1 / span 1;
+    font-family: "Palatino Linotype";
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 1.4rem;
+    font-weight: bold;
+    font-style: italic;
+    align-self: end;
+}
+
+#p2 {
+    grid-area: 2 / 1 / span 1 / span 1;
+    font-family: 'Castoro', "Palatino Linotype", sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 1.4rem;
+    font-weight: bold;
+    align-self: end;
+}
+
+#p3 {
+    grid-area: 3 / 1 / span 1 / span 1;
+    font-family: 'Castoro', "Palatino Linotype", sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 1.4rem;
+    font-weight: bold;
+    align-self: end;
+}
+
+#p4 {
+    grid-area: 4 / 1 / span 1 / span 1;
+    font-family: 'Castoro', "Palatino Linotype", sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 1.4rem;
+    font-weight: bold;
+    align-self: end;
+}
+
+#p5 {
+    grid-area: 5 / 1 / span 1 / span 1;
+    font-family: 'Castoro', "Palatino Linotype", sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 1.4rem;
+    font-weight: bold;
+    align-self: end;
+}
+
+#p6 {
+    grid-area: 6 / 1 / span 1 / span 1;
+    font-family: 'Castoro', "Palatino Linotype", sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 1.4rem;
+    font-weight: bold;
+    align-self: end;
+}
+
+h4 {
+    grid-area: 2 / 3 / span 1 / span 1;
+    font-family: "Palatino Linotype";
+    color: rgba(0, 0, 0, 0.818);
+    font-size: 17px;
+    line-height: 1.1rem;
+    font-style: oblique;
+    margin: 15% 15% 0 4%;
+}
+
+h5 {
+    font-family: "Palatino Linotype";
+    color: rgb(4, 3, 0);
+    font-size: 12px;
+    height: 19px;
+}
+
+#boxdrag {
+    grid-area: 3 / 3 / span 1 / span 1;
+    transition: opacity 0.2s;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    top: 10%;
+    position: relative;
+}
+
+.livro {
+    width: 50px;
+    height: 105px;
+    position: absolute;
+    z-index: 3;
+}
+
+.livro:hover {
+    transform: scale(0.8);
+    cursor: move;
+}
+
+.box > .livro {
+    /* livro dentro da box */
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.box > .box-livro {
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#Marcatempo {
+    grid-area: 4 / 1 / span 1 / span 1;
+    background-color: rgb(182, 114, 13);
+    width: 100px;
+    height: 75px;
+    font-size: 20px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 4px black;
+    justify-self: center;
+    /* centraliza horizontalmente */
+    align-self: center;
+    /* centraliza verticalmente */
+    padding: 2%;
+}
+
+#Marcapontuacao {
+    grid-area: 4 / 2 / span 1 / span 1;
+    background-color: rgb(182, 114, 13);
+    width: 100px;
+    height: 75px;
+    font-size: 20px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 4px black;
+    justify-self: center;
+    /* centraliza horizontalmente */
+    align-self: center;
+    /* centraliza verticalmente */
+    padding: 2%;
+}
+
+#sair-salvar {
+    grid-area: 4 / 3 / span 1 / span 1;
+    background: rgb(182, 114, 13);
+    width: 190px;
+    height: 70px;
+    font-size: 26px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    justify-self: center;
+    /* centraliza horizontalmente */
+    align-self: center;
+    /* centraliza verticalmente */
+}
+
+#sair-salvar:hover {
+    cursor: pointer;
+    background: rgb(229, 164, 65);
+    transform: scale(110%);
+}
+
+#mensagem-de-erro {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    z-index: 12;
+    display: none;
+    width: 70%;
+}
+
+#ok {
+    width: 60px;
+    height: 60px;
+    background-color: brown;
+    position: absolute;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    margin: 19% 12%;
+    border: outset 7px rgb(165, 168, 167);
+    border-radius: 5px;
+    z-index: 13;
+    bottom: 23%;
+    left: 57%;
+    display: none;
+}
+
+#ok:hover {
+    transform: scale(120%);
+    cursor: pointer;
+}
+
+.efeitoflash-button {
+    animation-name: efeitoflash-button;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    /*- caso você queira que o efeito se repita infinitamente*/
+}
+
+@keyframes efeitoflash-button {
+    0% {
+        background-color: brown;
+    }
+
+    50% {
+        background-color: rgb(220, 79, 8);
+    }
+
+    100% {
+        background-color: brown;
+    }
+}
+
+#mensagem-final {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    background-color: #9f854b;
+    width: 750px;
+    height: 850px;
+    grid-template-rows: 17% 10% 10% 10% auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-image: url("../imagens/mensagem-final.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#livro-escolhido {
+    grid-area: 2 / 1 / span 1 / span 2;
+    background: rgb(182, 114, 13);
+    padding: 1.5%;
+    width: 75%;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    left: 7%;
+}
+
+#ultimo-livro {
+    grid-area: 2 / 3 / span 1 / span 2;
+    background: rgb(182, 114, 13);
+    padding: 1.5%;
+    width: 75%;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    right: 7%;
+}
+
+#mensagem-livro-escolhido {
+    transition: transform 0.2s, background 0.2s, color 0.2s;
+    cursor: pointer;
+    grid-area: 3 / 1 / span 1 / span 4;
+    background: rgb(182, 114, 13);
+    padding: 1% 3%;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    margin: auto;
+    align-items: center;
+    display: none;
+}
+
+#mensagem-livro-escolhido:hover {
+    transform: scale(0.95);
+}
+
+#mensagem-livro-escolhido.clicado {
+    background: #c2592c;
+    color: #fff;
+    pointer-events: none;
+}
+
+#tempo-final {
+    grid-area: 4 / 1 / span 1 / span 2;
+    background: rgb(182, 114, 13);
+    padding: 2%;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    left: 7%;
+    bottom: 0;
+}
+
+#tempo-final h5 {
+    align-self: flex-start;
+    margin: 0;
+}
+
+#tempo-final h2 {
+    align-self: center;
+    margin: 0;
+}
+
+#pontuacao-final {
+    grid-area: 4 / 3 / span 1 / span 2;
+    background: rgb(182, 114, 13);
+    padding: 2%;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    right: 7%;
+    bottom: 0;
+}
+
+#pontuacao-final h5 {
+    align-self: flex-start;
+    margin: 0;
+}
+
+#pontuacao-final h2 {
+    align-self: center;
+    margin: 0;
+}
+
+#proxima-fase {
+    grid-area: 5 / 1 / span 1 / span 2;
+    background: rgb(182, 114, 13);
+    width: 120px;
+    height: 80px;
+    padding: 2%;
+    font-size: 23px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: #000;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    left: 7%;
+    bottom: 5%;
+}
+
+#proxima-fase:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    -moz-transform: scale(1.1, 1.2);
+    -webkit-transform: scale(1.1, 1.2);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#sair-jogo-finalizado {
+    grid-area: 5 / 3 / span 1 / span 2;
+    background: rgb(182, 114, 13);
+    width: 120px;
+    height: 80px;
+    font-size: 23px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: #000;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    right: 7%;
+    bottom: 5%;
+}
+
+#sair-jogo-finalizado:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    -moz-transform: scale(1.1, 1.2);
+    -webkit-transform: scale(1.1, 1.2);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.efeito-pisca {
+    animation: piscar 0.5s alternate 10;
+}
+
+@keyframes piscar {
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(2.5);
+    }
+}

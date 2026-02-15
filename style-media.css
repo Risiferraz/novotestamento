@@ -1,0 +1,784 @@
+/* Tamanho padrão da imagem fantasma (drag helper) */
+.drag-ghost {
+    width: 32px;
+    height: 77px;
+}
+
+/* 1) - VERDE FLUORESCENTE - Smartphones - telas de 641 até 750px */
+@media screen and (max-width: 750px) {
+
+    /* .ghost-helper {
+        width: 34px;
+        height: 39px;
+    } */
+
+    #game-base {
+        background-color: rgb(67, 183, 17);
+    }
+}
+
+/* 2) - AZUL REAL - Smartphones - telas de 481 até 640px */
+@media screen and (max-width: 640px) {
+
+    .drag-ghost {
+        width: 27px;
+        height: 59px;
+    }
+
+    #game-base {
+        background-color: rgb(50, 70, 251);
+    }
+}
+
+/* 3) - VINHO - Smartphones - telas de 376 até 480px e altura acima de 913px */
+@media screen and (max-width: 480px) {
+
+    #game-base {
+        background-color: rgb(167, 14, 14);
+    }
+
+    #stage {
+        padding-top: 0;
+    }
+
+    #pagina-inicial {
+        grid-template-rows: 19vh 31vh 37vh 13vh;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    header {
+        font-size: 38px;
+        padding: 3% 8%;
+    }
+
+    h3 {
+        font-size: 18px;
+        padding: 2%;
+    }
+
+    p {
+        font-size: 18px;
+        padding: 3% 7%;
+        line-height: 1.4rem;
+    }
+
+    #selecionar-opcoes {
+        font-size: 19px;
+        width: 35vw;
+        height: 8vh;
+    }
+
+    .lista-de-opcoes {
+        width: 42vw;
+    }
+
+    #start {
+        font-size: 20px;
+        width: 35vw;
+        height: 8vh;
+    }
+
+    .opcoes {
+        font-size: 17px;
+    }
+
+    .livro-escolhido-da-lista-de-opcoes {
+        height: 5vh;
+        align-items: center;
+    }
+
+    /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- */
+    .container {
+        grid-template-columns: 36vw 39vw 25vw;
+        grid-template-rows: 60vh 6vh 12vh 9vh 13vh;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .estante {
+        grid-area: 1 / 1 / span 1 / span 3;
+        grid-template-rows: 155px 76px 75px 76px 75px;
+        width: 375px;
+        margin: 0 auto;
+    }
+
+    .box {
+        width: 28px;
+        height: 48px;
+    }
+
+    /* 
+    #evangelhos {
+        justify-self: center;
+        margin-left: 0;
+    }
+
+    #historicos {
+        justify-self: center;
+        margin-left: 0;
+    }
+
+    #cartas-de-paulo {
+        justify-self: center;
+        margin-left: 0;
+    }
+
+    #cartas-gerais {
+        justify-self: center;
+        margin-left: 0;
+    }
+
+    #profetico {
+        justify-self: center;
+        margin-left: 0;
+    } */
+
+    #obs1 {
+        display: none;
+    }
+
+    #obs1-media {
+        display: block;
+        grid-area: 2 / 1 / span 1 / span 3;
+        font-size: 17px;
+        margin: 1% 4% 0 5%;
+        font-style: italic;
+    }
+
+    #boxdrag {
+        grid-area: 3 / 1 / span 3 / span 2;
+        margin: 1% 4% 0 5%;
+    }
+
+    #obs2 {
+        font-size: 16px;
+        margin: 0 15% 0 2%;
+    }
+
+    .livro {
+        top: 30%;
+    }
+
+    .livro:hover {
+        transform: scale(0.9);
+        cursor: move;
+    }
+
+    .draggable {
+        grid-area: 2 / 1 / span 1 / span 1;
+    }
+
+    .drag-ghost {
+        width: 30px;
+        height: 63px;
+    }
+
+    #Marcatempo {
+        grid-area: 3 / 3 / span 1 / span 1;
+        width: 75px;
+        height: 60px;
+        font-size: 15px;
+        align-self: end;
+    }
+
+    #Marcapontuacao {
+        grid-area: 4 / 3 / span 1 / span 1;
+        width: 75px;
+        height: 60px;
+        font-size: 15px;
+        align-self: end;
+    }
+
+    #sair-salvar {
+        grid-area: 5 / 3 / span 1 / span 1;
+        width: 75px;
+        height: 75px;
+        font-size: 19px;
+    }
+
+    h5 {
+        font-size: 10px;
+        height: 16px;
+    }
+
+    #mensagem-de-erro {
+        width: 90%;
+        bottom: 0;
+    }
+
+    #ok {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        left: 74%;
+        bottom: 26%;
+        margin: 0;
+    }
+
+    #mensagem-final {
+        grid-template-rows: 7% 10% 12% 10% auto;
+        background-position: bottom;
+        background-size: 110%;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    h5 {
+        font-size: 8px;
+        height: 12px;
+    }
+
+    #livro-escolhido {
+        grid-area: 2 / 1 / span 1 / span 2;
+        width: 80%;
+        font-size: 10px;
+        position: absolute;
+        margin: auto;
+    }
+
+    #ultimo-livro {
+        grid-area: 2 / 3 / span 1 / span 2;
+        width: 80%;
+        font-size: 10px;
+        position: absolute;
+        margin: auto;
+    }
+
+    #mensagem-livro-escolhido {
+        grid-area: 3 / 1 / span 1 / span 4;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3%;
+        width: auto;
+    }
+
+    #tempo-final {
+        grid-area: 4 / 1 / span 1 / span 2;
+        width: 80%;
+        font-size: 18px;
+        position: absolute;
+        margin: auto;
+    }
+
+    #pontuacao-final {
+        grid-area: 4 / 3 / span 1 / span 2;
+        width: 80%;
+        font-size: 18px;
+        position: absolute;
+        margin: auto;
+    }
+
+    #proxima-fase {
+        grid-area: 5 / 1 / span 1 / span 2;
+        width: 85px;
+        padding: 2%;
+        font-size: 18px;
+        left: 10%;
+        bottom: 60%;
+    }
+
+    #sair-jogo-finalizado {
+        grid-area: 5 / 3 / span 1 / span 2;
+        width: 85px;
+        padding: 2%;
+        font-size: 18px;
+        right: 10%;
+        bottom: 60%;
+    }
+}
+
+
+/* 4) - PÚRPURA -Smartphones - telas com largura de 376 até 480px e altura de 883px até 896px */
+@media (max-width: 480px) and (max-height: 896px) {
+    #game-base {
+        background-color: rgb(144, 14, 167);
+    }
+
+    #pagina-inicial {
+        grid-template-rows: 18vh 31vh 39vh 12vh;
+    }
+
+    header {
+        font-size: 33px;
+    }
+
+    h3 {
+        font-size: 18px;
+        padding: 0%;
+    }
+
+    p {
+        padding: 3% 5%;
+        line-height: 1.3rem;
+    }
+
+    #selecionar-opcoes {
+        font-size: 18px;
+    }
+
+    .container {
+        grid-template-rows: 61vh 6vh 10vh 10vh 12vh;
+        grid-template-columns: 35vw 39vw 26vw;
+    }
+
+    .estante {
+        grid-template-rows: 155px 76px 75px 76px 75px;
+    }
+
+    #obs1-media {
+        margin: 3% 4% 0 5%;
+    }
+
+    #mensagem-final {
+        grid-template-rows: 7% 10% 12% 10% auto;
+    }
+
+    #proxima-fase {
+        width: 90px;
+        left: 13%;
+        bottom: 60%;
+    }
+
+    #sair-jogo-finalizado {
+        width: 90px;
+        right: 13%;
+        bottom: 60%;
+    }
+}
+
+/* 5) ROSYBROWN - Smartphones - telas com largura de 376 até 480px e altura de até 882px */
+@media (max-width: 480px) and (max-height: 882px) {
+    #game-base {
+        background-color: rosybrown;
+    }
+
+    #pagina-inicial {
+        grid-template-rows: 22vh 6vh 53vh 18vh;
+    }
+
+    header {
+        font-size: 38px;
+        padding: 7% 4%;
+    }
+
+    h3 {
+        display: none;
+    }
+
+    p {
+        padding: 3% 5%;
+        line-height: 1.4rem;
+    }
+
+    #selecionar-opcoes {
+        height: 12vh;
+    }
+
+    .livro-escolhido-da-lista-de-opcoes {
+        height: 6vh;
+    }
+
+    #start {
+        height: 12vh;
+    }
+
+    .container {
+        grid-template-rows: 64vh 11vh 10vh 15vh 0;
+    }
+
+    #obs1-media {
+        display: none;
+    }
+
+    #obs2 {
+        margin: 0 10% 0 2%;
+    }
+
+    #boxdrag {
+        grid-area: 2 / 1 / span 3 / span 2;
+    }
+
+    #livrosapocrifos {
+        grid-area: 2 / 2 / span 3 / span 1;
+    }
+
+    #titulo-apocrifos {
+        margin: 2% 0% 7% 11%;
+    }
+
+    #Marcatempo {
+        grid-area: 2 / 3 / span 1 / span 1;
+    }
+
+    #Marcapontuacao {
+        grid-area: 3 / 3 / span 1 / span 1;
+    }
+
+    #sair-salvar {
+        grid-area: 4 / 3 / span 1 / span 1;
+    }
+
+}
+
+/* 6) - AMARELO - Smartphones - telas com largura de até 375px e altura de até 812px */
+@media (max-width: 375px) and (max-height: 812px) {
+    #game-base {
+        background-color: yellow;
+    }
+
+    .container {
+        grid-template-columns: 34vw 42vw 24vw;
+    }
+
+    .estante {
+        grid-template-rows: 131px 75px 74px 71px 72px;
+        background-position: bottom;
+        width: 360px;
+        height: 512px;
+    }
+
+    #pentateuco {
+        width: 275px;
+    }
+
+    #historicos {
+        width: 275px;
+    }
+
+    #poeticos {
+        width: 275px;
+    }
+
+    #pmaiores {
+        width: 275px;
+    }
+
+    #pmenores {
+        width: 275px;
+    }
+
+    #obs1-media {
+        display: grid;
+        margin: 2% 20% 0 5%;
+    }
+
+    #obs2 {
+        margin: 16% 2% 0 1%;
+    }
+
+    .livro {
+        top: 44%;
+    }
+
+    #Marcatempo {
+        width: 61px;
+        font-size: 13px;
+        padding-top: 7%;
+    }
+
+    #Marcapontuacao {
+        width: 61px;
+        font-size: 13px;
+        padding-top: 7%;
+    }
+
+    #sair-salvar {
+        font-size: 18px;
+        width: 73px;
+    }
+
+}
+
+/* 7) - ROSÊ - Smartphones - telas com largura de até 375px e altura de até 761px */
+@media (max-width: 375px) and (max-height: 761px) {
+    #game-base {
+        background-color: rgb(71, 116, 113);
+    }
+
+    .container {
+        grid-template-rows: 63vh 7vh 9vh 9vh 12vh;
+        grid-template-columns: 36vw 38vw 26vw;
+    }
+
+    .estante {
+        grid-template-rows: 119px 70px 68px 69px 68px;
+        width: 340px;
+        height: 480px;
+    }
+
+    #pentateuco {
+        width: 260px;
+    }
+
+    #historicos {
+        width: 260px;
+    }
+
+    #poeticos {
+        width: 260px;
+    }
+
+    #pmaiores {
+        width: 260px;
+    }
+
+    #pmenores {
+        width: 260px;
+    }
+
+    .box {
+        width: 22px;
+        height: 42px;
+    }
+
+    #obs1-media {
+        grid-area: 2 / 1 / span 1 / span 3;
+        font-size: 15px;
+        margin: 1% 1% 0 4%;
+    }
+
+    #obs2 {
+        font-size: 15px;
+        line-height: 1rem;
+        margin: -7% 4% 0 0;
+    }
+
+    #boxdrag {
+        grid-area: 3 / 1 / span 1 / span 2;
+    }
+
+    .livro {
+        width: 40px;
+        height: 90px;
+        top: 120%;
+    }
+
+    h5 {
+        font-size: 9px;
+        height: 14px;
+    }
+
+    #Marcatempo {
+        grid-area: 3 / 3 / span 1 / span 1;
+        width: 58px;
+        font-size: 12px;
+        height: 52px;
+    }
+
+    #Marcapontuacao {
+        grid-area: 4 / 3 / span 1 / span 1;
+        width: 58px;
+        font-size: 12px;
+        height: 52px;
+    }
+
+    #sair-salvar {
+        grid-area: 5 / 3 / span 1 / span 1;
+        font-size: 14px;
+        width: 58px;
+        height: 60px;
+    }
+
+    #livro-escolhido {
+        width: 88%;
+    }
+
+    #ultimo-livro {
+        width: 88%;
+    }
+
+}
+
+/* 8) - CINZA - Smartphones - telas com largura de até 375px e altura de até 668px */
+@media (max-width: 375px) and (max-height: 668px) {
+    #game-base {
+        background-color: grey;
+    }
+
+    .container {
+        grid-template-rows: 70vh 9vh 9vh 12vh 0;
+    }
+
+    .estante {
+        grid-template-rows: 112px 65px 64px 65px 64px;
+        width: 320px;
+        height: 450px;
+    }
+
+    #pentateuco {
+        width: 245px;
+    }
+
+    #historicos {
+        width: 245px;
+    }
+
+    #poeticos {
+        width: 245px;
+    }
+
+    #pmaiores {
+        width: 245px;
+    }
+
+    #pmenores {
+        width: 245px;
+    }
+
+    #obs1-media {
+        grid-area: 2 / 1 / span 1 / span 2;
+        margin: 1% 1% 0 8%;
+    }
+
+    #obs2 {
+        margin: -5% 10%;
+    }
+
+    #boxdrag {
+        grid-area: 3 / 1 / span 3 / span 1;
+    }
+
+    .draggable {
+        margin: 18% auto;
+    }
+
+    .livro {
+        top: 5%;
+        right: -60%;
+    }
+
+    h5 {
+        font-size: 9px;
+        height: 14px;
+    }
+
+    #Marcatempo {
+        grid-area: 2 / 3 / span 1 / span 1;
+        padding-top: 3%;
+        width: 58px;
+        font-size: 12px;
+        height: 52px;
+    }
+
+    .drag-ghost {
+        width: 25px;
+        height: 60px;
+    }
+
+    #Marcapontuacao {
+        grid-area: 3 / 3 / span 1 / span 1;
+        padding-top: 4%;
+    }
+
+    #sair-salvar {
+        grid-area: 4 / 3 / span 1 / span 1;
+    }
+
+    #mensagem-final {
+        grid-template-rows: 2% 8% 13% 9% auto;
+        background-size: 104%;
+    }
+
+    #livro-escolhido {
+        width: 90%;
+        font-size: 9px;
+    }
+
+    #ultimo-livro {
+        width: 90%;
+        font-size: 9px;
+    }
+
+    #tempo-final {
+        width: 90%;
+        font-size: 15px;
+    }
+
+    #pontuacao-final {
+        width: 90%;
+        font-size: 15px;
+    }
+}
+
+/* -----------------------------------------------------------------------------*/
+/* MENSAGEM DE ORIENTAÇÃO LANDSCAPE - Oculta por padrão */
+/* #region */
+
+#landscape-warning {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#landscape-warning-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    max-width: 90%;
+    width: fit-content;
+    margin: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#landscape-warning-content h2 {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#landscape-warning-content p {
+    margin: 15px 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#rotate-icon {
+    font-size: 48px;
+    margin-top: 20px;
+    animation: rotateAnimation 2s infinite;
+}
+
+@keyframes rotateAnimation {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+}
+
+/* -----------------------------------------------------------------------------*/
+/*      ORIENTAÇÃO LANDSCAPE EM SMARTPHONES      */
+/* Exibe a mensagem "landscape-warning" em telas menores que 928px */
+/* Informa que o aplicativo foi feito para ser usado em orientação retrato */
+@media screen and (orientation: landscape) and (max-width: 927px) {
+
+    /* MOSTRAR MENSAGEM DE ORIENTAÇÃO EM LANDSCAPE */
+    #landscape-warning {
+        display: flex !important;
+    }
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+}

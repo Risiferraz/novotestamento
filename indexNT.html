@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styleNT.css" />
+    <link rel="stylesheet" type="text/css" href="style-media.css" />
+    <title>NOVO TESTAMENTO</title>
+</head>
+
+<body>
+    <div id="stage">
+        <!-- PÁGINA INICIAL -->
+        <div id="pagina-inicial">
+            <header>
+                JOGO DOS LIVROS DA BÍBLIA NOVO TESTAMENTO
+            </header>
+            <h3>Nesta etapa, você terá que posicionar os livros do Novo Testamento dividindo-os
+                em cinco categorias:<br><br>
+                * Evangelhos<br>
+                * Histórico<br>
+                * Cartas de Paulo<br>
+                * Cartas Gerais<br>
+                * Profético<br>
+            </h3>
+            <p> Pegue o primeiro livro, arraste-o, e posicione-o na prateleira correspondente
+                e na ordem correta. Se você acertar o local correto o livro mudará de cor.
+                Se colocar em um lugar incorreto você poderá removê-lo dali, e tentar novamente.
+                Ao posicionar um livro, outro aparecerá no dispenser de livros. São 27 livros.
+                Vamos brincar? Tente adivinhar qual será o último livro a ser liberado.
+                Clique na seta abaixo e escolha, na lista, uma opção. Se você acertar ganhará
+                um ponto extra no final!<br> Boa sorte! Vamos lá?
+            </p>
+            <button id="selecionar-opcoes" type="button" onclick="clicarOpcoes()">ESCOLHA AQUI &#9660;</button>
+            <div class="lista-de-opcoes">
+                <div class="opcoes" onclick="selecionarOpcao(this)">MATEUS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">MARCOS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">LUCAS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">JOÃO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">ATOS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">ROMANOS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">1 CORÍNTIOS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">2 CORÍNTIOS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">GÁLATAS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">EFÉSIOS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">FILIPENSES</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">COLOSSENSES</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">1 TESSALONICENSES</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">2 TESSALONICENSES</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">1 TIMÓTEO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">2 TIMÓTEO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">TITO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">FILEMOM</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">HEBREUS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">TIAGO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">1 PEDRO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">2 PEDRO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">1 JOÃO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">2 JOÃO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">3 JOÃO</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">JUDAS</div>
+                <div class="opcoes" onclick="selecionarOpcao(this)">APOCALIPSE</div>
+            </div>
+            <button type="button" id="start" onclick="clicarStart()">START</button>
+        </div>
+        <!-- SEGUNDA PÁGINA - JOGO -->
+        <div class="container" id="game-base">
+            <div class="estante">
+                <div id="evangelhos">
+                    <div class="box" data-draggable-id="mateus">
+                        <img alt="Mateus" class="box-livro" id="mateus" src="/imagens/mateus.png">
+                    </div>
+                    <div class="box" data-draggable-id="marcos">
+                        <img alt="Marcos" class="box-livro" id="marcos" src="/imagens/marcos.png">
+                    </div>
+                    <div class="box" data-draggable-id="lucas">
+                        <img alt="Lucas" class="box-livro" id="lucas" src="/imagens/lucas.png">
+                    </div>
+                    <div class="box" data-draggable-id="joao">
+                        <img alt="João" class="box-livro" id="joao" src="/imagens/joao.png">
+                    </div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                </div>
+                <div id="historicos">
+                    <div class="box" data-draggable-id="atos">
+                        <img alt="Atos" class="box-livro" id="atos" src="/imagens/atos.png">
+                    </div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                </div>
+                <div id="cartas-de-paulo">
+                    <div class="box" data-draggable-id="romanos">
+                        <img alt="Romanos" class="box-livro" id="romanos" src="/imagens/romanos.png">
+                    </div>
+                    <div class="box" data-draggable-id="1corintios">
+                        <img alt="1 Corintios" class="box-livro" id="1corintios" src="/imagens/1corintios.png">
+                    </div>
+                    <div class="box" data-draggable-id="2corintios">
+                        <img alt="2 Corintios" class="box-livro" id="2corintios" src="/imagens/2corintios.png">
+                    </div>
+                    <div class="box" data-draggable-id="galatas">
+                        <img alt="Galatas" class="box-livro" id="galatas" src="/imagens/galatas.png">
+                    </div>
+                    <div class="box" data-draggable-id="efesios">
+                        <img alt="Efesios" class="box-livro" id="efesios" src="/imagens/efesios.png">
+                    </div>
+                    <div class="box" data-draggable-id="filipenses">
+                        <img alt="Filipenses" class="box-livro" id="filipenses" src="/imagens/filipenses.png">
+                    </div>
+                    <div class="box" data-draggable-id="colossenses">
+                        <img alt="Colossenses" class="box-livro" id="colossenses" src="/imagens/colossenses.png">
+                    </div>
+                    <div class="box" data-draggable-id="1tessalonicenses">
+                        <img alt="1 Tessalonicenses" class="box-livro" id="1tessalonicenses"
+                            src="/imagens/1tessalonicenses.png">
+                    </div>
+                    <div class="box" data-draggable-id="2tessalonicenses">
+                        <img alt="2 Tessalonicenses" class="box-livro" id="2tessalonicenses"
+                            src="/imagens/2tessalonicenses.png">
+                    </div>
+                    <div class="box" data-draggable-id="1timoteo">
+                        <img alt="1 Timoteo" class="box-livro" id="1timoteo" src="/imagens/1timoteo.png">
+                    </div>
+                    <div class="box" data-draggable-id="2timoteo">
+                        <img alt="2 Timoteo" class="box-livro" id="2timoteo" src="/imagens/2timoteo.png">
+                    </div>
+                    <div class="box" data-draggable-id="tito">
+                        <img alt="Tito" class="box-livro" id="tito" src="/imagens/tito.png">
+                    </div>
+                    <div class="box" data-draggable-id="filemom">
+                        <img alt="Filemom" class="box-livro" id="filemom" src="/imagens/filemom.png">
+                    </div>
+                </div>
+                <div id="cartas-gerais">
+                    <div class="box" data-draggable-id="hebreus">
+                        <img alt="Hebreus" class="box-livro" id="hebreus" src="/imagens/hebreus.png">
+                    </div>
+                    <div class="box" data-draggable-id="tiago">
+                        <img alt="Tiago" class="box-livro" id="tiago" src="/imagens/tiago.png">
+                    </div>
+                    <div class="box" data-draggable-id="1pedro">
+                        <img alt="1 Pedro" class="box-livro" id="1pedro" src="/imagens/1pedro.png">
+                    </div>
+                    <div class="box" data-draggable-id="2pedro">
+                        <img alt="2 Pedro" class="box-livro" id="2pedro" src="/imagens/2pedro.png">
+                    </div>
+                    <div class="box" data-draggable-id="1joao">
+                        <img alt="1 Joao" class="box-livro" id="1joao" src="/imagens/1joao.png">
+                    </div>
+                    <div class="box" data-draggable-id="2joao">
+                        <img alt="2 Joao" class="box-livro" id="2joao" src="/imagens/2joao.png">
+                    </div>
+                    <div class="box" data-draggable-id="3joao">
+                        <img alt="3 Joao" class="box-livro" id="3joao" src="/imagens/3joao.png">
+                    </div>
+                    <div class="box" data-draggable-id="judas">
+                        <img alt="Judas" class="box-livro" id="judas" src="/imagens/judas.png">
+                    </div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                </div>
+                <div id="profetico">
+                    <div class="box" data-draggable-id="apocalipse">
+                        <img alt="Apocalipse" class="box-livro" id="apocalipse" src="/imagens/apocalipse.png">
+                    </div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                    <div class="box" data-draggable-id="vazia"></div>
+                </div>
+            </div>
+
+            <div id="obs1">
+                <p id="p1">O Novo Testamento é dividido em cinco partes:</p>
+                <p id="p2">EVANGELHOS</p>
+                <p id="p3">LIVRO HISTÓRICO</p>
+                <p id="p4">CARTAS DE PAULO</p>
+                <p id="p5">CARTAS GERAIS</p>
+                <p id="p6">LIVRO PROFÉTICO</p>
+            </div>
+            <div id="obs1-media">
+                O Novo Testamento é dividido em 5 partes, retratadas nas
+                prateleiras, como você pode ver acima.
+            </div>
+            <div id="boxdrag">
+                <h4 id="obs2">Arraste o livro abaixo e disponha-o em sua prateleira correspondente e na sequência correta.</h4>
+                <img alt="Mateus" class="livro" id="mateus-drag" draggable="true" src="/livros/mateus.png">
+                <img alt="Marcos" class="livro" id="marcos-drag" draggable="true" src="/livros/marcos.png">
+                <img alt="Lucas" class="livro" id="lucas-drag" draggable="true" src="/livros/lucas.png">
+                <img alt="João" class="livro" id="joao-drag" draggable="true" src="/livros/joao.png">
+                <img alt="Atos" class="livro" id="atos-drag" draggable="true" src="/livros/atos.png">
+                <img alt="Romanos" class="livro" id="romanos-drag" draggable="true" src="/livros/romanos.png">
+                <img alt="1 Coríntios" class="livro" id="1corintios-drag" draggable="true" src="/livros/1corintios.png">
+                <img alt="2 Coríntios" class="livro" id="2corintios-drag" draggable="true" src="/livros/2corintios.png">
+                <img alt="Gálatas" class="livro" id="galatas-drag" draggable="true" src="/livros/galatas.png">
+                <img alt="Efésios" class="livro" id="efesios-drag" draggable="true" src="/livros/efesios.png">
+                <img alt="Filipenses" class="livro" id="filipenses-drag" draggable="true" src="/livros/filipenses.png">
+                <img alt="Colossenses" class="livro" id="colossenses-drag" draggable="true"
+                    src="/livros/colossenses.png">
+                <img alt="1 Tessalonicenses" class="livro" id="1tessalonicenses-drag" draggable="true"
+                    src="/livros/1tessalonicenses.png">
+                <img alt="2 Tessalonicenses" class="livro" id="2tessalonicenses-drag" draggable="true"
+                    src="/livros/2tessalonicenses.png">
+                <img alt="1 Timóteo" class="livro" id="1timoteo-drag" draggable="true" src="/livros/1timoteo.png">
+                <img alt="2 Timóteo" class="livro" id="2timoteo-drag" draggable="true" src="/livros/2timoteo.png">
+                <img alt="Tito" class="livro" id="tito-drag" draggable="true" src="/livros/tito.png">
+                <img alt="Filemom" class="livro" id="filemom-drag" draggable="true" src="/livros/filemom.png">
+                <img alt="Hebreus" class="livro" id="hebreus-drag" draggable="true" src="/livros/hebreus.png">
+                <img alt="Tiago" class="livro" id="tiago-drag" draggable="true" src="/livros/tiago.png">
+                <img alt="1 Pedro" class="livro" id="1pedro-drag" draggable="true" src="/livros/1pedro.png">
+                <img alt="2 Pedro" class="livro" id="2pedro-drag" draggable="true" src="/livros/2pedro.png">
+                <img alt="1 João" class="livro" id="1joao-drag" draggable="true" src="/livros/1joao.png">
+                <img alt="2 João" class="livro" id="2joao-drag" draggable="true" src="/livros/2joao.png">
+                <img alt="3 João" class="livro" id="3joao-drag" draggable="true" src="/livros/3joao.png">
+                <img alt="Judas" class="livro" id="judas-drag" draggable="true" src="/livros/judas.png">
+                <img alt="Apocalipse" class="livro" id="apocalipse-drag" draggable="true" src="/livros/apocalipse.png">
+            </div>
+            <div id="Marcatempo">
+                <h5>TEMPO:</h5>
+                <h2 id="cronometro">00:00</h2>
+            </div>
+            <div id="Marcapontuacao">
+                <h5>PONTOS:</h5>
+                <h2 id="indicador">100</h2>
+            </div>
+            <button type="button" id="sair-salvar" onclick="clicarSair()">SALVAR E SAIR</button>
+
+            <!-- MENSAGENS TEMPORÁRIAS: -->
+            <img alt="Tente de novo" id="mensagem-de-erro" src="/imagens/mensagem-de-erro.png">
+            <button type="button" id="ok" onclick="clicarOk()" class="efeitoflash-button">OK!</button>
+            <div id="mensagem-final">
+                <div id="livro-escolhido">
+                    <h5>LIVRO ESCOLHIDO:</h5>
+                    <h1 id="nome-livro-escolhido"></h1>
+                </div>
+                <div id="ultimo-livro">
+                    <h5>ÚLTIMO LIVRO SORTEADO</h5>
+                    <h1 id="nome-ultimo-livro"></h1>
+                </div>
+                <div id="mensagem-livro-escolhido"></div>
+                <div id="tempo-final">
+                    <h5>DURAÇÃO DE TEMPO:</h5>
+                    <h2 id="mostra-tempo-final">00:00</h2>
+                </div>
+                <div id="pontuacao-final">
+                    <h5>SUA PONTUAÇÃO FINAL:</h5>
+                    <h2 id="mostra-pontuacao-final">0000</h2>
+                </div>
+                <button type="button" id="proxima-fase">PRÓXIMA FASE</button>
+                <button type="button" id="sair-jogo-finalizado">SAIR</button>
+                <!-- <a href="2fase.html" rel="next" ></a> -->
+            </div>
+        </div>
+    </div>
+    <!-- MENSAGEM DE ORIENTAÇÃO LANDSCAPE -->
+    <div id="landscape-warning">
+        <div id="landscape-warning-content">
+            <h2>⚠️ Atenção!</h2>
+            <p>Para uma melhor experiência, <strong>gire seu dispositivo</strong> para a posição vertical (portrait).
+            </p>
+            <div id="rotate-icon">📱 ↻</div>
+        </div>
+    </div>
+    <script src="scripts/pontuacao.js" defer></script>
+    <script src="scripts/cronometro.js" defer></script>
+    <script src="scripts/BotaoSair.js" defer></script>
+    <script src="scripts/scriptNT.js" defer></script>
+    </script>
+</body>
+
+</html>
