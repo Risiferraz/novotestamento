@@ -34,9 +34,9 @@
 /* 3) - VINHO - Smartphones - telas de 376 até 480px e altura acima de 913px */
 @media screen and (max-width: 480px) {
 
-    #game-base {
+    /* #game-base {
         background-color: rgb(167, 14, 14);
-    }
+    } */
 
     #stage {
         padding-top: 0;
@@ -108,32 +108,6 @@
         width: 28px;
         height: 48px;
     }
-
-    /* 
-    #evangelhos {
-        justify-self: center;
-        margin-left: 0;
-    }
-
-    #historicos {
-        justify-self: center;
-        margin-left: 0;
-    }
-
-    #cartas-de-paulo {
-        justify-self: center;
-        margin-left: 0;
-    }
-
-    #cartas-gerais {
-        justify-self: center;
-        margin-left: 0;
-    }
-
-    #profetico {
-        justify-self: center;
-        margin-left: 0;
-    } */
 
     #obs1 {
         display: none;
@@ -297,9 +271,9 @@
 
 /* 4) - PÚRPURA -Smartphones - telas com largura de 376 até 480px e altura de 883px até 896px */
 @media (max-width: 480px) and (max-height: 896px) {
-    #game-base {
+    /* #game-base {
         background-color: rgb(144, 14, 167);
-    }
+    } */
 
     #pagina-inicial {
         grid-template-rows: 18vh 31vh 39vh 12vh;
@@ -363,9 +337,9 @@
 
 /* 5) ROSYBROWN - Smartphones - telas com largura de 376 até 480px e altura de até 882px */
 @media (max-width: 480px) and (max-height: 882px) {
-    #game-base {
+    /* #game-base {
         background-color: rosybrown;
-    }
+    } */
 
     #pagina-inicial {
         grid-template-rows: 22vh 6vh 53vh 18vh;
@@ -436,9 +410,9 @@
 
 /* 6) - AMARELO - Smartphones - telas com largura de até 375px e altura de até 812px */
 @media (max-width: 375px) and (max-height: 812px) {
-    #game-base {
+    /* #game-base {
         background-color: yellow;
-    }
+    } */
 
     .container {
         grid-template-columns: 34vw 42vw 24vw;
@@ -485,9 +459,9 @@
 
 /* 7) - AZUL COBALTO - Smartphones - telas com largura de até 375px e altura de até 761px */
 @media (max-width: 375px) and (max-height: 761px) {
-    #game-base {
+    /* #game-base {
         background-color: rgb(71, 116, 113);
-    }
+    } */
 
     .container {
         grid-template-rows: 63vh 7vh 9vh 9vh 12vh;
@@ -565,9 +539,9 @@
 
 /* 8) - CINZA - Smartphones - telas com largura de até 375px e altura de até 668px */
 @media (max-width: 375px) and (max-height: 668px) {
-    #game-base {
+    /* #game-base {
         background-color: grey;
-    }
+    } */
 
     .container {
         grid-template-rows: 70vh 9vh 9vh 12vh 0;
