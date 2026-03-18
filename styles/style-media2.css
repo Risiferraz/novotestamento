@@ -1,0 +1,613 @@
+/* 1) - COR VERDE - TELAS COM ALTURA MENOR OU IGUAL A 750PX */
+
+@media screen and (max-height: 750px) {
+    #pagina-inicial {
+        margin: 0 auto;
+        /* background-color: green; */
+        grid-template-rows: 21% 31% 33% 15%;
+    }
+
+    header {
+        padding: 4% 8%;
+    }
+
+    #p-principal {
+        padding: 2% 9%;
+    }
+
+    #selecionar-opcoes {
+        font-size: 20px;
+        width: 40%;
+    }
+
+    #start {
+        font-size: 20px;
+        width: 40%;
+    }
+}
+
+/* 2) - COR VERMELHA - TELAS COM  LARGURA DE 376 A 479PX */
+
+@media screen and (max-width: 479px) {
+
+    #pagina-inicial {
+        /* background-color: #dd0f0f; */
+        grid-template-rows: repeat(4, auto);
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    header {
+        font-size: 38px;
+        padding: 5% 8% 0 8%;
+    }
+
+    h3 {
+        font-size: 18px;
+        padding: 0%;
+        margin: 0 10%;
+    }
+
+    #p-principal {
+        padding: 4% 7% 0 7%;
+        line-height: 1.5rem;
+        font-size: 18px;
+    }
+
+    #selecionar-opcoes {
+        font-size: 18px;
+    }
+
+    .livro-escolhido-da-lista-de-opcoes {
+        width: 80%;
+        padding: 0px;
+    }
+
+    .opcoes {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #start {
+        font-size: 18px;
+    }
+
+    .container {
+        grid-template-rows: 61vh 6vh 10vh 10vh 12vh;
+        grid-template-columns: 35vw 39vw 26vw;
+    }
+
+    .estante {
+        grid-template-rows: 155px 76px 75px 76px 75px;
+    }
+
+    .boxapocrifos {
+        width: 70px;
+        height: 28px;
+    }
+
+    #mensagem-final {
+        grid-template-rows: 7% 10% 12% 10% auto;
+    }
+
+    #proxima-fase {
+        width: 90px;
+        left: 13%;
+        bottom: 60%;
+    }
+
+    #sair-jogo-finalizado {
+        width: 90px;
+        right: 13%;
+        bottom: 60%;
+    }
+
+    /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- */
+    .container {
+        grid-template-columns: 36vw 39vw 25vw;
+        grid-template-rows: 60vh 6vh 12vh 9vh 13vh;
+        width: 100vw;
+        height: 100vh;
+        /* background-color: #dd0f0f; */
+    }
+
+    .estante {
+        grid-area: 1 / 1 / span 1 / span 3;
+        grid-template-rows: 155px 76px 75px 76px 75px;
+        width: 375px;
+        margin: 0 auto;
+    }
+
+    .box {
+        width: 32px;
+        height: 48px;
+    }
+
+    #pentateuco {
+        justify-self: center;
+        margin-left: 0;
+        width: 282px;
+    }
+
+    #historicos {
+        justify-self: center;
+        margin-left: 0;
+        width: 282px;
+    }
+
+    #poeticos {
+        justify-self: center;
+        margin-left: 0;
+        width: 282px;
+    }
+
+    #pmaiores {
+        justify-self: center;
+        margin-left: 0;
+        width: 282px;
+    }
+
+    #pmenores {
+        justify-self: center;
+        margin-left: 0;
+        width: 282px;
+    }
+
+    #obs1 {
+        display: none;
+    }
+
+    #obs1-media {
+        display: block;
+        grid-area: 2 / 1 / span 1 / span 3;
+        font-size: 17px;
+        margin: 1% 1% 0 4%;
+        font-style: italic;
+    }
+
+    #boxdrag {
+        grid-area: 3 / 1 / span 3 / span 1;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 50% 50%;
+        padding: 0;
+        margin: 1% 1% 0 5%;
+    }
+
+    #obs2 {
+        font-size: 16px;
+        margin: 5% 2% 0 11%;
+        grid-area: 1 / 1 / span 1 / span 1;
+    }
+
+    .draggable {
+        grid-area: 2 / 1 / span 1 / span 1;
+    }
+
+    .ghost-helper {
+        width: 30px !important;
+        height: 67px !important;
+    }
+
+    #livrosapocrifos {
+        grid-area: 3 / 2 / span 3 / span 1;
+    }
+
+    #titulo-apocrifos {
+        font-size: 16px;
+        margin: 2% 6% 7% 11%;
+    }
+
+    .boxapocrifos {
+        width: 70px;
+        height: 30px;
+    }
+
+    #Marcatempo {
+        grid-area: 3 / 3 / span 1 / span 1;
+        width: 75px;
+        height: 60px;
+        font-size: 15px;
+        align-self: end;
+    }
+
+    #Marcapontuacao {
+        grid-area: 4 / 3 / span 1 / span 1;
+        width: 75px;
+        height: 60px;
+        font-size: 15px;
+        align-self: end;
+    }
+
+    #sair-salvar {
+        grid-area: 5 / 3 / span 1 / span 1;
+        width: 75px;
+        height: 75px;
+        font-size: 19px;
+    }
+
+    h5 {
+        font-size: 10px;
+        height: 16px;
+    }
+
+    h5 {
+        font-size: 8px;
+        height: 12px;
+    }
+
+    #mensagem-de-erro {
+        width: 90%;
+        bottom: 0;
+    }
+
+    #ok {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        left: 74%;
+        bottom: 26%;
+        margin: 0;
+    }
+
+    #mensagem-final {
+        grid-template-rows: 7% 10% 12% 10% auto;
+        background-position: bottom;
+        background-size: 110%;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #livro-escolhido {
+        grid-area: 2 / 1 / span 1 / span 2;
+        width: 80%;
+        font-size: 10px;
+        position: absolute;
+        margin: auto;
+    }
+
+    #ultimo-livro {
+        grid-area: 2 / 3 / span 1 / span 2;
+        width: 80%;
+        font-size: 10px;
+        position: absolute;
+        margin: auto;
+    }
+
+    #mensagem-livro-escolhido {
+        grid-area: 3 / 1 / span 1 / span 4;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3%;
+        width: auto;
+    }
+
+    #tempo-final {
+        grid-area: 4 / 1 / span 1 / span 2;
+        width: 80%;
+        font-size: 18px;
+        position: absolute;
+        margin: auto;
+    }
+
+    #pontuacao-final {
+        grid-area: 4 / 3 / span 1 / span 2;
+        width: 80%;
+        font-size: 18px;
+        position: absolute;
+        margin: auto;
+    }
+
+    #proxima-fase {
+        grid-area: 5 / 1 / span 1 / span 2;
+        width: 85px;
+        padding: 2%;
+        font-size: 18px;
+        left: 10%;
+        bottom: 60%;
+    }
+
+    #sair-jogo-finalizado {
+        grid-area: 5 / 3 / span 1 / span 2;
+        width: 85px;
+        padding: 2%;
+        font-size: 18px;
+        right: 10%;
+        bottom: 60%;
+    }
+}
+
+/* 3) - COR VERDE - TELAS COM  LARGURA DE 376 A 479PX E ALTURA MENOR OU IGUAL A 890PX */
+
+@media screen and (max-width: 479px) and (max-height: 890px) {
+    /* #pagina-inicial {
+        background-color: #34823d;
+    } */
+
+    .container {
+        grid-template-rows: 63vh 5vh 10vh 10vh 12vh;
+        grid-template-columns: 36vw 40vw 24vw;
+        /* background-color: #34823d; */
+    }
+
+    .estante {
+        margin: -4% auto;
+    }
+
+    #obs1-media {
+        margin: 0 1% 0 4%;
+    }
+
+    #obs2 {
+        margin: 3% 2% 0 6%;
+    }
+
+    .draggable {
+        margin: 10% auto;
+    }
+
+    #titulo-apocrifos {
+        margin: 2% 6% 2% 7%;
+    }
+
+    .boxapocrifos {
+        width: 67px;
+        height: 26px;
+    }
+}
+
+/* 4) - COR AZUL - TELAS COM ALTURA MENOR OU IGUAL A 780PX */
+
+@media screen and (max-width: 375px) and (max-height: 780px) {
+    #pagina-inicial {
+        /* background-color: #676fe4; */
+        grid-template-rows: 25% 36% 22% 17%;
+    }
+
+    header {
+        font-size: 37px;
+        padding: 6% 10% 0 10%;
+    }
+
+    #selecionar-opcoes {
+        font-size: 16px;
+        width: 65%;
+    }
+
+    #start {
+        font-size: 16px;
+        width: 65%;
+    }
+
+    #p-principal {
+        display: none;
+    }
+
+    #p-opcional {
+        display: block;
+        grid-area: 3 / 1 / span 1 / span 2;
+        font-family: "Palatino Linotype", serif;
+        font-size: 18px;
+        line-height: 1.3rem;
+        color: #000000;
+        font-style: italic;
+        text-align: center;
+        padding: 5% 5%;
+    }
+
+    .container {
+        grid-template-rows: 63vh 5vh 11vh 9vh 12vh;
+        grid-template-columns: 36vw 40vw 24vw;
+        /* background-color: #676fe4; */
+    }
+
+    .estante {
+        grid-area: 1 / 1 / span 1 / span 3;
+        grid-template-rows: 143px 69px 69px 68px 68px;
+        width: 340px;
+    }
+
+    #pentateuco {
+        width: 260px;
+    }
+
+    #historicos {
+        width: 260px;
+    }
+
+    #poeticos {
+        width: 260px;
+    }
+
+    #pmaiores {
+        width: 260px;
+    }
+
+    #pmenores {
+        width: 260px;
+    }
+
+    #obs1-media {
+        margin: 2% 1% 0 4%;
+        font-size: 15px;
+
+    }
+
+    #obs2 {
+        font-size: 15px;
+        line-height: 1rem;
+    }
+
+    #titulo-apocrifos {
+        font-size: 15px;
+    }
+
+    .boxapocrifos {
+        width: 65px;
+        height: 23px;
+    }
+
+    #Marcatempo {
+        width: 68px;
+    }
+
+    #Marcapontuacao {
+        width: 68px;
+    }
+
+    #sair-salvar {
+        width: 69px;
+        height: 70px;
+        font-size: 17px;
+    }
+}
+
+/* 5) - COR ROSYBROWN - TELAS COM LARGURA MENOR OU IGUAL A 375PX E ALTURA MENOR OU IGUAL A 667PX */
+
+@media screen and (max-width: 375px) and (max-height: 670px) {
+    /* #pagina-inicial {
+        background-color: rosybrown;
+    } */
+
+    .container {
+        /* background-color: rosybrown; */
+        grid-template-rows: 63vh 1vh 11vh 11vh 14vh;
+    }
+
+    .estante {
+        grid-template-rows: 120px 59px 59px 59px 57px;
+        width: 290px;
+    }
+
+    .box {
+        width: 30px;
+        height: 38px;
+    }
+
+    #pentateuco {
+        width: 225px;
+    }
+
+    #historicos {
+        width: 225px;
+    }
+
+    #poeticos {
+        width: 225px;
+    }
+
+    #pmaiores {
+        width: 225px;
+    }
+
+    #pmenores {
+        width: 225px;
+    }
+
+    #obs1-media {
+        display: none;
+    }
+
+    #obs2 {
+        font-size: 13px;
+    }
+
+    .boxapocrifos {
+        width: 53px;
+        height: 20px;
+    }
+
+    .draggable {
+        margin: 0% auto;
+    }
+
+    #titulo-apocrifos {
+        font-size: 13px;
+        line-height: 1rem;
+        margin: 2% 6% 5% 11%;
+    }
+
+    .ghost-helper {
+        width: 25px !important;
+        height: 55px !important;
+    }
+
+    #Marcatempo {
+        width: 65px;
+        font-size: 14px;
+    }
+
+    #Marcapontuacao {
+        width: 65px;
+        font-size: 14px;
+    }
+}
+
+/* -----------------------------------------------------------------------------*/
+/* MENSAGEM DE ORIENTAÇÃO LANDSCAPE - Oculta por padrão */
+/* #region */
+
+@media screen and (orientation: landscape) and (max-height: 600px) {
+
+    #landscape-warning {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #landscape-warning-content {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+        max-width: 90%;
+        width: fit-content;
+        margin: auto;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    #landscape-warning-content h2 {
+        margin: 0 0 15px 0;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    #landscape-warning-content p {
+        margin: 15px 0;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    #rotate-icon {
+        font-size: 48px;
+        margin-top: 20px;
+        animation: rotateAnimation 2s infinite;
+    }
+
+    @keyframes rotateAnimation {
+
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(90deg);
+        }
+    }
+}
