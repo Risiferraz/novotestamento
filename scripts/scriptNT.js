@@ -178,10 +178,10 @@ function dragStart(event) {
   // Ocultar a imagem original durante o arraste
   img.style.opacity = '0';
 
-  // 1) criar um helper visual (imagem fantasma) totalmente opaco que segue o cursor
-  const helper = new Image(); // Cria um novo elemento de imagem para servir como o "helper" visual que seguirá o cursor durante o arraste.
-  helper.src = img.src; // Define a fonte da imagem do helper para ser a mesma da imagem original que está sendo arrastada, garantindo que o helper tenha a mesma aparência visual.
-  helper.className = 'drag-ghost';  // Define a classe CSS do helper para "drag-ghost", permitindo que ele seja estilizado de forma específica (por exemplo, para definir seu tamanho, opacidade, etc.) através do CSS.
+  // 1) criar um helper visual que segue o cursor, tamanho controlado só pelo CSS
+  const helper = new Image();
+  helper.src = img.src;
+  helper.className = 'ghost-helper';
   helper.style.position = 'fixed';
   helper.style.left = '0px';
   helper.style.top = '0px';
@@ -191,12 +191,12 @@ function dragStart(event) {
   helper.style.opacity = '1';
   helper.style.transformOrigin = 'center center';
   document.body.appendChild(helper);
-  const ghostW = parseFloat(window.getComputedStyle(helper).width) || 32;
-  const ghostH = parseFloat(window.getComputedStyle(helper).height) || 77;
+  // Calcular o tamanho real do helper após aplicar o CSS
+  const ghostW = helper.offsetWidth;
+  const ghostH = helper.offsetHeight;
   const offsetX = ghostW * 0.5;
   const offsetY = ghostH * 0.5;
   const onDragMove = (e) => {
-    // Parar de mover se o drop foi bem-sucedido
     if (img._dropSuccessful || !helper.parentNode) return;
     helper.style.left = (e.clientX - offsetX) + 'px';
     helper.style.top = (e.clientY - offsetY) + 'px';

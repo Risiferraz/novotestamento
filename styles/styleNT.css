@@ -21,7 +21,6 @@ body {
     align-items: start;
     justify-items: start;
     overflow: hidden;
-    padding-top: 2%;
     height: 100vh;
     max-height: 100vh;
 }
@@ -54,6 +53,10 @@ h3 {
     text-align: center;
     margin: 0 17%;
     font-style: italic;
+}
+
+#h3media {
+    display: none;
 }
 
 p {
@@ -368,6 +371,11 @@ h5 {
     z-index: 1;
 }
 
+.ghost-helper {
+    width: 39px !important;
+    height: 83px !important;
+}
+
 #Marcatempo {
     grid-area: 4 / 1 / span 1 / span 1;
     background-color: rgb(182, 114, 13);
@@ -650,4 +658,8 @@ h5 {
     to {
         filter: brightness(2.5);
     }
+}
+
+#landscape-warning {
+    display: none;
 }
