@@ -190,7 +190,7 @@
     }
 
     #mensagem-final {
-        grid-template-rows: 7% 10% 12% 10% auto;
+        grid-template-rows: 6% 9% 11% 10% auto;
         background-position: bottom;
         background-size: 110%;
         width: 100vw;
@@ -250,7 +250,7 @@
         padding: 2%;
         font-size: 18px;
         left: 10%;
-        bottom: 60%;
+        bottom: 58%;
     }
 
     #sair-jogo-finalizado {
@@ -259,7 +259,7 @@
         padding: 2%;
         font-size: 18px;
         right: 10%;
-        bottom: 60%;
+        bottom: 58%;
     }
 }
 
